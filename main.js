@@ -28,6 +28,11 @@ recognition.addEventListener("result", (e) => {
             p.innerText='My name is Saoud! Yours?'
             texts.appendChild(p)
         }
+        if (text.includes('clear')) {
+            
+            texts.remove(p)
+
+        }
         p = document.createElement('p')
     }
 });
