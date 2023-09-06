@@ -13,35 +13,40 @@ recognition.addEventListener("result", (e) => {
     .map((result) => result[0])
     .map((result) => result.transcript)
     .join("");
-    p.innerText = text;
-    texts.appendChild(p)
-    if (e.results[0].isFinal) {
-        if (text.includes('hello')) {
-            p = document.createElement('p')
-            p.classList.add('replay')
-            p.innerText='Hi'
-            texts.appendChild(p)
-        }
-        if (text.includes('what is your name')||text.includes("what's your name")) {
-            p = document.createElement('p')
-            p.classList.add('replay')
-            p.innerText='My name is Saoud! Yours?'
-            texts.appendChild(p)
-        }
-        if (text.includes('open my YouTube channel')) {
-            p = document.createElement('p')
-            p.classList.add('replay')
-            p.innerText='Opening youtube channel'
-            texts.appendChild(p)
-            window.open('https://www.youtube.com/')
-        }
-        if (text.includes('clear')) {
-            
-            texts.remove(p)
-
-        }
-        p = document.createElement('p')
+  p.innerText = text;
+  texts.appendChild(p);
+  if (e.results[0].isFinal) {
+    if (text.includes("hello")||text.includes("hi")||text.includes("hey")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "Hi";
+      texts.appendChild(p);
+      }
+  
+    if (
+      text.includes("what is your name") ||
+      text.includes("what's your name")
+    ) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = `My name is Saoud!`;
+      texts.appendChild(p);
     }
+
+    if (text.includes("open my YouTube channel")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "Opening youtube channel";
+      texts.appendChild(p);
+      window.open("https://www.youtube.com/");
+    }
+    if (text.includes("clear")) {
+      texts.remove(p);
+    }
+    p = document.createElement("p");
+  }
 });
-recognition.addEventListener('end',()=>{recognition.start()})
+recognition.addEventListener("end", () => {
+  recognition.start();
+});
 recognition.start();
