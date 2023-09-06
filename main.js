@@ -15,6 +15,9 @@ recognition.addEventListener("result", (e) => {
     .join("");
     p.innerText = text;
     texts.appendChild(p)
+    if (e.result[0].isFinal) {
+        p = document.createElement('p')
+    }
 });
-
+recognition.addEventListener('end',()=>{recognition.start()})
 recognition.start();
