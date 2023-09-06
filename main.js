@@ -16,6 +16,12 @@ recognition.addEventListener("result", (e) => {
     p.innerText = text;
     texts.appendChild(p)
     if (e.result[0].isFinal) {
+        if (text.includes('Hello')) {
+            p = document.createElement('p')
+            p.classList.add('replay')
+            p.innerText='Hi'
+            texts.appendChild(p)
+        }
         p = document.createElement('p')
     }
 });

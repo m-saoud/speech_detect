@@ -54,3 +54,7 @@ section p{
     -o-border-radius: 8px;
     width: 100%;
 }
+
+.texts p.replay{
+    text-align: right;
+}
