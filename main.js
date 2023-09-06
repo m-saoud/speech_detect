@@ -28,6 +28,13 @@ recognition.addEventListener("result", (e) => {
             p.innerText='My name is Saoud! Yours?'
             texts.appendChild(p)
         }
+        if (text.includes('open my YouTube channel')) {
+            p = document.createElement('p')
+            p.classList.add('replay')
+            p.innerText='Opening youtube channel'
+            texts.appendChild(p)
+            window.open('https://www.youtube.com/')
+        }
         if (text.includes('clear')) {
             
             texts.remove(p)
