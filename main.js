@@ -15,11 +15,17 @@ recognition.addEventListener("result", (e) => {
     .join("");
     p.innerText = text;
     texts.appendChild(p)
-    if (e.result[0].isFinal) {
-        if (text.includes('Hello')) {
+    if (e.results[0].isFinal) {
+        if (text.includes('hello')) {
             p = document.createElement('p')
             p.classList.add('replay')
             p.innerText='Hi'
+            texts.appendChild(p)
+        }
+        if (text.includes('what is your name')||text.includes("what's your name")) {
+            p = document.createElement('p')
+            p.classList.add('replay')
+            p.innerText='My name is Saoud! Yours?'
             texts.appendChild(p)
         }
         p = document.createElement('p')
