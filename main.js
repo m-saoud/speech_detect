@@ -30,7 +30,7 @@ recognition.addEventListener("result", (e) => {
       p = document.createElement("p");
       p.classList.add("replay");
       p.innerText = `My name is Saoud!`;
-      texts.appendChild(p);
+      texts.appendChild(p)
     }
 
     if (text.includes("open my YouTube channel")) {
